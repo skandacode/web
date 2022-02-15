@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Image to use:</p>
+<img id="player" src="{{url_for('static', filename='player_left.jpg')}}" alt="player">
+<p>Canvas to fill:</p>
+<canvas id="myCanvas" width="600" height="400"
+style="border:1px solid #000000;">
+Your browser cannot play this game</canvas>
+
+<p><button onclick="myCanvas()">PLAY</button></p>
+
+<script>
+function myCanvas() {
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  var img = document.getElementById("player");
+  var x_pos=0;
+  var y_pos=20;
+  while (x_pos<600){
+    ctx.clearRect(0, 0, 600, 400);
+    ctx.drawImage(img,x_pos,y_pos);
+    x_pos+=1;
+    alert(x_pos);
+  }
+}
+</script>
+
+</body>
+</html>
